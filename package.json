@@ -1,0 +1,13 @@
+{
+  "name": "browser-input-frequency",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Compare browser-visible mouse input across three event APIs.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node tools/serve.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "engines": { "node": ">=20" }
+}

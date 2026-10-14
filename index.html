@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An open mouse input experiment comparing mousemove, pointermove and pointerrawupdate, including coalesced samples.">
+  <title>Browser Input Frequency — an open mouse experiment</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="src/measurement.js" defer></script>
+  <script src="src/demo.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="./">INPUT / LAB</a><a href="https://mousepollingratetest.com/" target="_blank" rel="noopener noreferrer">Full online tool ↗</a></header>
+    <section class="intro">
+      <p class="eyebrow">EXPERIMENT 001 · OPEN SOURCE</p>
+      <h1>One mouse.<br>Three event streams.</h1>
+      <p class="lede">See what your browser actually delivers. Compare event callbacks with the movement samples inside them.</p>
+    </section>
+    <section class="experiment" aria-labelledby="experiment-title">
+      <div class="toolbar"><h2 id="experiment-title">10-second capture</h2><span id="capabilities">Checking browser…</span></div>
+      <div id="movement-area">
+        <div class="target" aria-hidden="true">+</div>
+        <p id="instruction">Start a capture, then move your mouse continuously across this page.</p>
+        <p class="quiet">Large, smooth circles work well. Keep this tab in focus.</p>
+        <div class="controls"><button id="start">Start capture</button><button id="stop" disabled>Stop</button><button id="export" disabled>Export JSON ↓</button></div>
+      </div>
+      <div class="progress"><div id="progress-fill"></div></div>
+      <div class="capture-status"><span id="status" role="status" aria-live="polite">Ready</span><span id="elapsed">0.0 / 10.0 s</span></div>
+      <div class="table-wrap"><table>
+        <caption>Independent API streams, measured over the same time window</caption>
+        <thead><tr><th scope="col">Event stream</th><th scope="col">Callbacks / s</th><th scope="col">Samples / s</th><th scope="col">Samples</th><th scope="col">Median interval</th><th scope="col">Capture</th></tr></thead>
+        <tbody id="results"></tbody>
+      </table></div>
+      <p class="note">A callback may contain several coalesced samples. Each row is independent; never add their counts together. “Observed” does not establish sample completeness or certify a device’s USB polling rate.</p>
+    </section>
+    <section class="explanation">
+      <article><span class="number">01 / DELIVERY</span><h2>Callbacks aren’t samples.</h2><p>A browser can group movement updates into one callback. Pointer Events can expose those updates through <code>getCoalescedEvents()</code>. This experiment counts the children or the parent, never both.</p></article>
+      <article><span class="number">02 / PRECISION</span><h2>No universal 1,000 Hz ceiling.</h2><p>Delivery depends on the browser, operating system and device. Raw updates can expose more frequent input, but cannot recover samples lost upstream. Coarse timestamps can make interval statistics unavailable.</p></article>
+    </section>
+    <footer><span>Local processing · No tracking · No external dependencies</span><a href="https://www.w3.org/TR/pointerevents3/" target="_blank" rel="noopener noreferrer">Read the Pointer Events standard ↗</a></footer>
+  </main>
+</body>
+</html>
