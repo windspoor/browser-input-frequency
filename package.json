@@ -1,8 +1,8 @@
 {
-  "name": "browser-input-frequency",
+  "name": "mouse-polling-rate-test",
   "version": "1.0.0",
   "private": true,
-  "description": "Compare browser-visible mouse input across three event APIs.",
+  "description": "Open-source mouse polling rate test and mouse Hz checker comparing mousemove, pointermove and pointerrawupdate.",
   "license": "MIT",
   "scripts": {
     "start": "node tools/serve.cjs",

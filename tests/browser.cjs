@@ -18,6 +18,8 @@ async function main() {
     const errors = [];
     page.on('pageerror', e => errors.push(e.message));
     await page.goto(base, { waitUntil:'load' });
+    assert.equal(await page.title(), 'Mouse Polling Rate Test – Open Source Mouse Hz Checker');
+    assert.equal(await page.locator('h1').innerText(), 'Mouse Polling\nRate Test');
     assert.equal(await page.locator('#results tr').count(), 3);
     assert.ok((await page.locator('#capabilities').innerText()).includes('Secure context'));
     assert.equal(await page.locator('#export').isDisabled(), true);
@@ -39,6 +41,8 @@ async function main() {
     await page.locator('#export').click();
     const download = await downloadEvent;
     const payload = JSON.parse(fs.readFileSync(await download.path(), 'utf8'));
+    assert.equal(payload.experiment, 'Mouse Polling Rate Test');
+    assert.ok(download.suggestedFilename().startsWith('mouse-polling-rate-test-'));
     assert.ok(payload.streams.mousemove.samples > 0);
     assert.ok(payload.streams.pointermove.samples > 0);
     assert.ok(payload.elapsedMs >= 3000);

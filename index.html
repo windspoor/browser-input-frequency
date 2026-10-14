@@ -3,22 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An open mouse input experiment comparing mousemove, pointermove and pointerrawupdate, including coalesced samples.">
-  <title>Browser Input Frequency — an open mouse experiment</title>
+  <meta name="description" content="Free open-source mouse polling rate test and mouse Hz checker. Compare mousemove, pointermove and pointerrawupdate with coalesced samples in your browser.">
+  <title>Mouse Polling Rate Test – Open Source Mouse Hz Checker</title>
+  <link rel="canonical" href="https://windspoor.github.io/mouse-polling-rate-test/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mouse Polling Rate Test – Open Source Mouse Hz Checker">
+  <meta property="og:description" content="Test browser-visible mouse frequency in Hz and compare three event APIs with this free open-source demo.">
+  <meta property="og:url" content="https://windspoor.github.io/mouse-polling-rate-test/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mouse Polling Rate Test – Open Source Mouse Hz Checker">
+  <meta name="twitter:description" content="Test browser-visible mouse frequency in Hz and compare three event APIs with this free open-source demo.">
   <link rel="stylesheet" href="style.css">
   <script src="src/measurement.js" defer></script>
   <script src="src/demo.js" defer></script>
 </head>
 <body>
   <main>
-    <header><a class="brand" href="./">INPUT / LAB</a><a href="https://mousepollingratetest.com/" target="_blank" rel="noopener noreferrer">Full online tool ↗</a></header>
+    <header><a class="brand" href="./">MOUSE POLLING RATE TEST</a><a href="https://mousepollingratetest.com/" target="_blank" rel="noopener noreferrer">Full online test ↗</a></header>
     <section class="intro">
-      <p class="eyebrow">EXPERIMENT 001 · OPEN SOURCE</p>
-      <h1>One mouse.<br>Three event streams.</h1>
-      <p class="lede">See what your browser actually delivers. Compare event callbacks with the movement samples inside them.</p>
+      <p class="eyebrow">FREE MOUSE HZ CHECKER · OPEN SOURCE</p>
+      <h1>Mouse Polling<br>Rate Test</h1>
+      <p class="lede">Check your mouse’s browser-visible frequency in Hz. Compare three event streams and see the movement samples inside each callback.</p>
     </section>
     <section class="experiment" aria-labelledby="experiment-title">
-      <div class="toolbar"><h2 id="experiment-title">10-second capture</h2><span id="capabilities">Checking browser…</span></div>
+      <div class="toolbar"><h2 id="experiment-title">10-second mouse polling rate test</h2><span id="capabilities">Checking browser…</span></div>
       <div id="movement-area">
         <div class="target" aria-hidden="true">+</div>
         <p id="instruction">Start a capture, then move your mouse continuously across this page.</p>

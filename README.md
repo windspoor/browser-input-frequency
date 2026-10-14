@@ -1,12 +1,15 @@
-# Browser Input Frequency
+# Mouse Polling Rate Test
 
-A small, dependency-free experiment comparing `mousemove`, `pointermove`, and
-`pointerrawupdate`. See both **callback frequency** and **browser-visible movement
-sample frequency**, including samples exposed by `getCoalescedEvents()`.
+A free, open-source **mouse polling rate test** and **mouse Hz checker** that runs
+in your browser. Compare `mousemove`, `pointermove`, and `pointerrawupdate` to see
+both **callback frequency** and **browser-visible movement sample frequency**,
+including samples exposed by `getCoalescedEvents()`.
 
-**[Full online mouse polling rate tool →](https://mousepollingratetest.com/)**
+**[Full online mouse polling rate test →](https://mousepollingratetest.com/)**
 
-**[Run the comparison demo →](https://windspoor.github.io/browser-input-frequency/)**
+**[Run the open-source mouse polling rate test →](https://windspoor.github.io/mouse-polling-rate-test/)**
+
+**[Source code →](https://github.com/windspoor/mouse-polling-rate-test)**
 
 This demo adapts the sampling approach used by MousePollingRateTest. It measures
 what a webpage can observe. It does not read USB transactions or certify the

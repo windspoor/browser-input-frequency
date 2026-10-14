@@ -97,7 +97,7 @@
   document.addEventListener('visibilitychange', () => { if (document.hidden) finish('tab hidden'); });
   $('export').addEventListener('click', () => {
     const payload = {
-      experiment:'Browser Input Frequency', recordedAt:new Date().toISOString(),
+      experiment:'Mouse Polling Rate Test', recordedAt:new Date().toISOString(),
       measurementLayer:'browser-visible mouse movement',
       methodology:'independent streams; common arrival window; count / elapsed seconds',
       simultaneousListeners:true, coalescedApiAvailable:supportsCoalesced,
@@ -107,7 +107,7 @@
     const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' }));
     const link = document.createElement('a');
     link.href = url;
-    link.download = `browser-input-frequency-${Date.now()}.json`;
+    link.download = `mouse-polling-rate-test-${Date.now()}.json`;
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
