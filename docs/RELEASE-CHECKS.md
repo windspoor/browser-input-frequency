@@ -3,6 +3,7 @@
 Version: 1.0.0.
 
 - 17 deterministic algorithm tests passed, including synthetic 125–8,000 Hz input.
+- The initial GitHub Actions test run also passed on Node.js 22 / Ubuntu.
 - Chromium integration passed for browser-generated movement, synthetic-event
   rejection, JSON download, manual stop, focus interruption, empty restart and
   automatic ten-second stop.

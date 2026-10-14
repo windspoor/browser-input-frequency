@@ -6,6 +6,8 @@ sample frequency**, including samples exposed by `getCoalescedEvents()`.
 
 **[Full online mouse polling rate tool →](https://mousepollingratetest.com/)**
 
+**[Run the comparison demo →](https://windspoor.github.io/browser-input-frequency/)**
+
 This demo adapts the sampling approach used by MousePollingRateTest. It measures
 what a webpage can observe. It does not read USB transactions or certify the
 configured polling rate of your mouse.
@@ -212,8 +214,8 @@ validation/                Blank real-device results ledger
 LICENSE                    MIT license
 ```
 
-Publish this directory as its own repository. It has no build or deployment link
-to the main site. GitHub Pages can serve the root static files if enabled manually.
+This directory is published in its own repository. It has no build or deployment
+link to the main site. Its comparison demo is served separately by GitHub Pages.
 
 ## License and attribution
 

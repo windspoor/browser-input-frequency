@@ -31,6 +31,7 @@ async function main() {
       await page.mouse.move(400 + i * 5, 470 + (i % 2) * 60, { steps:3 });
       await new Promise(resolve => setTimeout(resolve, 40));
     }
+    await page.waitForFunction(() => parseFloat(document.querySelector('#elapsed').textContent) >= 3);
     await page.locator('#stop').click();
     assert.ok((await page.locator('#status').innerText()).includes('Capture complete'));
     assert.equal(await page.locator('#export').isDisabled(), false);

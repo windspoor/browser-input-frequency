@@ -1,5 +1,10 @@
 # Publish as a separate GitHub repository
 
+This release is already published at
+[windspoor/browser-input-frequency](https://github.com/windspoor/browser-input-frequency),
+with [GitHub Pages](https://windspoor.github.io/browser-input-frequency/) enabled.
+The instructions below are for publishing your own copy.
+
 Run every command **inside this companion directory**, never inside the main
 mousepollingratetest site repository. No production deployment is required.
 
